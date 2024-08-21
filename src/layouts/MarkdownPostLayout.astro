@@ -1,18 +1,9 @@
 ---
+import type { InferEntrySchema } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
-  frontmatter: {
-    title: string;
-    pubDate: Date;
-    description: string;
-    author: string;
-    image: {
-      url: string;
-      alt: string;
-    };
-    tags: string[];
-  };
+  frontmatter: InferEntrySchema<"posts">;
 }
 
 const { frontmatter } = Astro.props;
